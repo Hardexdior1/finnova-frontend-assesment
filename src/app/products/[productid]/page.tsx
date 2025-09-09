@@ -1,6 +1,5 @@
 
 import React from "react";
-import { notFound } from "next/navigation";
 
 interface Product {
   id: string;
@@ -27,7 +26,7 @@ async function getProduct(productid: string): Promise<Product | null> {
 
 //  Metadata uses the same fetcher
 export async function generateMetadata({ params }: { params: { productid: string } }) {
-  const product = await getProduct(await params.productid);
+  const product = await getProduct(params.productid);
 
   if (!product) {
     return {
@@ -44,7 +43,7 @@ export async function generateMetadata({ params }: { params: { productid: string
 
 // Page uses the same fetcher
 const Page = async ({ params }: { params: { productid: string } }) => {
-  const product = await getProduct(await params.productid);
+  const product = await getProduct(params.productid);
 
   if (!product) return <div className="h-screen text-center flex flex-col items-center justify-center text-xl "><p>Product not found</p></div>;
 

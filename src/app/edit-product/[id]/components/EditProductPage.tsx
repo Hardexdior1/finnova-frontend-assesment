@@ -31,7 +31,7 @@ const EditProductPage = ({ product }: { product: Product }) => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value.trim() }));
   };
 
   // this if for uploading file 
@@ -142,6 +142,7 @@ const EditProductPage = ({ product }: { product: Product }) => {
                 <input
                   type="text"
                   name="image"
+                  disabled
                   value={formData.image}
                   onChange={handleChange}
                   className="w-full mt-1 px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"

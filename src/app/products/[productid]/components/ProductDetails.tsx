@@ -17,7 +17,7 @@ interface ProductDetailProps {
 
 const ProductDetails: React.FC<ProductDetailProps> = ({ product }) => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-6">
       <div className="max-w-4xl w-full bg-white rounded-2xl shadow-xl overflow-hidden border">
         <div className="md:flex">
           {/* Left: Image */}

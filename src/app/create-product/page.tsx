@@ -75,7 +75,7 @@ toast.success("Product created successfully!");
         <input
           type="text"
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => setName(e.target.value.trim())}
           className="w-full p-4 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring transition-all duration-200"
           placeholder="Enter product name"
           required
@@ -89,7 +89,7 @@ toast.success("Product created successfully!");
         <input
           type="number"
           value={price}
-          onChange={(e) => setPrice(e.target.value)}
+          onChange={(e) => setPrice(e.target.value.trim())}
           className="w-full p-4 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring transition-all duration-200"
           min="0"
           step="0.01"
@@ -106,7 +106,7 @@ toast.success("Product created successfully!");
       </label>
       <textarea
         value={description}
-        onChange={(e) => setDescription(e.target.value)}
+        onChange={(e) => setDescription(e.target.value.trim())}
         className="w-full p-4 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring transition-all duration-200 resize-none"
         rows={4}
         placeholder="Enter product description"
@@ -147,7 +147,7 @@ toast.success("Product created successfully!");
     {/* Actions */}
   <div>
    
-    <div className="flex gap-4 my-4 ">
+    <div className="flex flex-col gap-4 my-4 md:flex-row ">
       <button
         type="submit"
         className="flex-1 bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-200 font-semibold shadow-sm hover:shadow-md"
