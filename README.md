@@ -1,4 +1,4 @@
-<!-- gettin started cone the project to your code editor -->
+<!-- gettin started clone the project to your code editor -->
 https://github.com/Hardexdior1/finnova-frontend-assesment.git ./
 
 <!-- install dependencies -->
