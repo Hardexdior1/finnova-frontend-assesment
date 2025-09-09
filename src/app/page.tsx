@@ -65,7 +65,7 @@ toast.error('could not delete product an error occured')
   }
 }
   return (
-    <div className="flex flex-col gap-10 py-10 container bg-background">
+    <div className="flex flex-col gap-10 py-10 container b">
       <ToastContainer />
       {/* hero component */}
       <Hero />
@@ -76,7 +76,7 @@ toast.error('could not delete product an error occured')
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-10 pt-8">
           <h2 className="text-3xl font-bold text-foreground">Product Collection</h2>
           <Link href="/create-product">
-            <button className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-all shadow-sm hover:shadow-md">
+            <button className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-all shadow-sm hover:shadow-md">
               + Add New Product
             </button>
           </Link>
@@ -140,13 +140,13 @@ toast.error('could not delete product an error occured')
      
       <div className="flex flex-col flex-wrap sm:flex-row gap-3">
         <Link href={`/products/${product.id}`} className="flex-1">
-          <button className="w-full flex items-center justify-center gap-2 bg-blue-600 text-white p-3 rounded-lg text-base font-medium hover:bg-blue-700 transition">
+          <button className="w-full flex items-center justify-center gap-2 bg-blue text-white p-3 rounded-lg text-base font-medium hover:bg-blue-700 transition">
             <Eye className="w-5 h-5" /> View
           </button>
         </Link>
 
         <Link href={`/edit-product/${product.id}`} className="flex-1">
-          <button className="w-full flex items-center justify-center gap-2 bg-yellow-500 text-white p-3 rounded-lg text-base font-medium hover:bg-yellow-600 transition">
+          <button className="w-full flex items-center justify-center gap-2 bg-yellow text-white p-3 rounded-lg text-base font-medium hover:bg-yellow-600 transition">
             <Edit className="w-5 h-5" /> Edit
           </button>
         </Link>
@@ -154,7 +154,7 @@ toast.error('could not delete product an error occured')
         <button onClick={() => {
           setProductToDelete(product);
           setShowDelete(true);
-        }} className="flex-1 flex items-center justify-center gap-2 bg-red-600 text-white p-3 rounded-lg text-base font-medium hover:bg-red-700 transition">
+        }} className="flex-1 flex items-center justify-center gap-2 bg-red text-white p-3 rounded-lg text-base font-medium hover:bg-red-700 transition">
           <Trash className="w-5 h-5" /> Delete
         </button>
       </div>

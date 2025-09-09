@@ -45,7 +45,7 @@ const ProductDetails: React.FC<ProductDetailProps> = ({ product }) => {
 
             <div className="flex gap-4 mt-8">
               <Link href={`/edit-product/${product.id}`} className="flex-1">
-                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg shadow-md transition">
+                <button className="w-full bg-blue hover:bg-blue-700 text-white font-semibold py-3 rounded-lg shadow-md transition">
                   Edit Product
                 </button>
               </Link>
