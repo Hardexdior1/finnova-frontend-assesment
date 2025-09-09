@@ -35,7 +35,7 @@ const DeleteProductModal = ({
 
         {/* Delete Icon */}
         <div className="my-6 flex justify-center">
-          <Trash2 size={64} className="text-red-600" />
+          <Trash2 size={64} className="text-red" />
         </div>
 
         {/* Title */}
@@ -58,10 +58,11 @@ const DeleteProductModal = ({
             No, cancel
           </button>
           <button
-            className="flex-1 py-3 bg-red-600 text-white rounded-md hover:bg-red-700 transition"
+            className="flex-1 py-3 bg-red text-white rounded-md hover:bg-red-700 transition"
             onClick={() => {
               onDelete(product.id);
             }}
+            disabled={loading}
           >
            {loading?'deleting':' Yes, delete'}
           </button>

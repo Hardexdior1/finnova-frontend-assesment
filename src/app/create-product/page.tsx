@@ -30,7 +30,7 @@ const [loading,setLoding]=useState(false)
     e.preventDefault();
 
     if (!imageFile) {
-      alert("Please select an image");
+      toast.error("Please select an image");
       return;
     }
     setLoding(true)
@@ -150,7 +150,7 @@ toast.success("Product created successfully!");
     <div className="flex flex-col gap-4 my-4 md:flex-row ">
       <button
         type="submit"
-        className="flex-1 bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-200 font-semibold shadow-sm hover:shadow-md"
+        className="flex-1 bg-blue text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-200 font-semibold shadow-sm hover:shadow-md"
       >
 
         {loading ? "Creating..." : "Create Product"}
