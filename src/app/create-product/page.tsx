@@ -7,9 +7,9 @@ import endpointroute from "../utils/endpointroute";
 import { X } from "lucide-react";
 import Link from "next/link";
 function ProductForm() {
-  const [name, setName] = useState("gucci");
+  const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("500");
+  const [price, setPrice] = useState("");
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
 const [loading,setLoding]=useState(false)
@@ -66,7 +66,7 @@ toast.success("Product created successfully!");
   </h2>
 
   <form onSubmit={handleSubmit} className="space-y-8">
-    {/* Row: Name + Price */}
+   
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div>
         <label className="block text-sm font-semibold mb-3 text-card-foreground">
@@ -99,7 +99,7 @@ toast.success("Product created successfully!");
       </div>
     </div>
 
-    {/* Description - Full width */}
+    {/* Description  */}
     <div>
       <label className="block text-sm font-semibold mb-3 text-card-foreground">
         Description
@@ -156,6 +156,7 @@ toast.success("Product created successfully!");
         {loading ? "Creating..." : "Create Product"}
       </button>
       <button
+        disabled={loading}
         type="button"
         onClick={() => {
           setName("");

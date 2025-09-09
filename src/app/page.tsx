@@ -33,10 +33,11 @@ const [loadingDelete,setLoadingDelete]=useState(false)
       try {
         const response = await endpointroute.get("/project")
         // setProducts(response.data?.slice(0,16))
+                // i dont want all the products to render at once, pagination is going to be usefull here,
+
                 setProducts(response?.data)
 
         console.log(response.data)
-        // i dont want all the products to render at once, pagination is going to be usefull here,
       } catch (error) {
         console.error("Failed to fetch products:", error)
       } finally {

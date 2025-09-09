@@ -27,7 +27,7 @@ async function getProduct(productid: string): Promise<Product | null> {
 
 //  Metadata uses the same fetcher
 export async function generateMetadata({ params }: { params: { productid: string } }) {
-  const product = await getProduct(params.productid);
+  const product = await getProduct(await params.productid);
 
   if (!product) {
     return {
@@ -44,9 +44,9 @@ export async function generateMetadata({ params }: { params: { productid: string
 
 // Page uses the same fetcher
 const Page = async ({ params }: { params: { productid: string } }) => {
-  const product = await getProduct(params.productid);
+  const product = await getProduct(await params.productid);
 
-  if (!product) return <div>Product not found</div>;
+  if (!product) return <div className="h-screen text-center flex flex-col items-center justify-center text-xl "><p>Product not found</p></div>;
 
   return <ProductDetails product={product} />;
 };

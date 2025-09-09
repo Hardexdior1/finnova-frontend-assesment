@@ -1,6 +1,5 @@
 
 import React from "react";
-import { notFound } from "next/navigation";
 
 interface Product {
   id: string;
@@ -9,7 +8,7 @@ interface Product {
   description: string;
   image: string;
 }
-import ProductDetails from "./components/ProductDetails";
+import ProductDetails from "./components/EditProductPage";
 // shared fetcher , 
 async function getProduct(id: string): Promise<Product | null> {
   try {
@@ -27,7 +26,7 @@ async function getProduct(id: string): Promise<Product | null> {
 
 //  Metadata uses the same fetcher
 export async function generateMetadata({ params }: { params: { id: string } }) {
-  const product = await getProduct(params.id);
+  const product = await getProduct(await params.id);
 
   if (!product) {
     return {
@@ -44,9 +43,9 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 
 //  Page uses the same fetcher
 const Page = async ({ params }: { params: { id: string } }) => {
-  const product = await getProduct(params.id);
+  const product = await getProduct(await params.id);
+  if (!product) return <div className="h-screen text-center flex flex-col items-center justify-center text-xl "><p>Product not found</p></div>;
 
-  if (!product) return <div>Product not found</div>;
 
   return <ProductDetails product={product} />;
 };
